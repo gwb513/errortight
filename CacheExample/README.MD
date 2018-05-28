@@ -5,8 +5,10 @@ The main function returns a list of callable functions, each having access to th
 The closure in this case keeps the global environment tidy by keeping the stock data within the function closure.
 The code also prevents re-downloading of existing data to save on API calls.
 
-A similar result could be obtained with an objected-oriented approach, which looks similar to the lexical scoping approach. 
+Although closures (creating functions with functions) is a functional programming feature of R, a similar result could be obtained with an objected-oriented approach. The environment looks a bit like an object with methods and privacy.   
 Having some familiarity with scoping rules and environments could be beneficial for future tasks.
+
+http://adv-r.had.co.nz/Functional-programming.html
 
 https://www.r-bloggers.com/closures-in-r-a-useful-abstraction/
 
