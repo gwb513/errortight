@@ -94,6 +94,7 @@ si0 = StockInfo()
 
 # Lookup things in the environment
 environment(si$getData)
+environment(si$fetchData) # the functions have the same environment!
 ls(environment(si$getData))
 environment(si$getData)$Data
 environment(si$getData)$tickers
