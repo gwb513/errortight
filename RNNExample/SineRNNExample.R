@@ -125,19 +125,22 @@ NN$n_epochs = 30
 NN1 = NN # save to initialize the RNN with different settings
 NN1 = bptt_rnn2(NN1)
 
-# needs fixin:
-# NN1 = rnn_predict(NN1,v0 = v[,250:252],tind = 1:500)
+
+v0 = matrix(te_data$X[1,,],nrow = 1)
+NN1 = rnn_predict(NN1,v0 = v0,tind = 1:500)
 
 NN2 = NN
 NN2$method = 'adam'
-NN3$eta = .000001
+NN2$eta = .000001
+NN2$n_epochs = 30
 NN2 = bptt_rnn2(NN2)
-# needs fixin:
-# NN2 = rnn_predict(NN2,v0 = v[,250:252],tind = 1:500)
+
+NN2 = rnn_predict(NN2,v0 = v0,tind = 1:500)
 
 NN3 = NN
 NN3$method = 'rmsprop_m'
 NN3$eta = .001
+NN3$n_epochs = 200
 NN3 = bptt_rnn2(NN3)
-# needs fixin:
-#NN3 = rnn_predict(NN3,v0 = v[,250:252],tind = 1:500)
+
+NN3 = rnn_predict(NN3,v0 = v0,tind = 1:500)

@@ -258,11 +258,15 @@ rnn_fprop2 <- function(NN,X,Y,seq_length) {
 }
 
 rnn_predict <- function(NN,v0,tind) {
+
   Tmax = NN$Tmax
   nh = NN$n_neurons[2]
   ni = NN$n_inputs
   no = NN$n_outputs
 
+  Whh = NN$trans_layer[[1]]$w
+  Whv = NN$layer[[1]]$w
+  Woh = NN$layer[[2]]$w
   #print(is.null(NN$u))
 
   NN$u = matrix(0, ncol = Tmax, nrow = nh)
@@ -270,7 +274,7 @@ rnn_predict <- function(NN,v0,tind) {
   NN$o = matrix(0, ncol = Tmax, nrow = no)
   NN$z = matrix(0, ncol = Tmax, nrow = no)
   NN$E = matrix(0, ncol = Tmax, nrow = no)
-  browser()
+
   for (t in tind) {
 
     if (t <= dim(v0)[2]) {
@@ -303,7 +307,7 @@ rnn_predict <- function(NN,v0,tind) {
   #NN$SSE_last = NN$SSE
   #NN$SSE = sum(NN$E[,tind]^2)
   #print(NN$SSE)
-  browser()
+
   print('finished iterations')
   plot(NN$z[1,], ylim = c(-1,1))
   matplot(z_tar[1,], add = TRUE, col = 'blue')
