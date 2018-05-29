@@ -14,6 +14,9 @@
 # Graphical representations of backpropagation
 # http://www.yann-ollivier.org/rech/publs/artbp.pdf
 
+source('./RNNfunctions.R')
+source('./optimMethods.R')
+
 nsamps = 10000
 fs = 1000 # the sampling rate
 y[1:nsamps,] = sin((1:nsamps)/(fs/20*2*pi))
