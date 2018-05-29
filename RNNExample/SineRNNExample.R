@@ -19,6 +19,7 @@ source('./optimMethods.R')
 
 nsamps = 10000
 fs = 1000 # the sampling rate
+y = matrix(0,nrow = nsamps,ncol = 1)
 y[1:nsamps,] = sin((1:nsamps)/(fs/20*2*pi))
 y = matrix(y, nrow = nsamps, ncol = 1)
 plot(y)
