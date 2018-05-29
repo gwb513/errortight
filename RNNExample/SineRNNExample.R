@@ -1,3 +1,5 @@
+# remove(list = ls()) # clear the global environment
+
 # NN links:
 # NN tips and tricks
 # https://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf
